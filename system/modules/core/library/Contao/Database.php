@@ -602,7 +602,7 @@ abstract class Database
 	 */
 	public static function quoteIdentifier($strName)
 	{
-		if (strtolower($strName) == 'rows')
+		if (in_array(strtolower($strName), ['rows', 'groups']))
 		{
 			$strName = '`'.$strName.'`';
 		}
